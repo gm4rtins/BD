@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Crie sua Conta ou Faça Login</h1>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <form method="POST" action="" class=" border p-4 mt-2 mb-4">
+                    <Legend>Criar Conta</Legend>
+                    <fieldset>
+                        <div class="form-group">
+                            {{form_criar_conta.nome.label(class="form-control-label")}}
+                            {{form_criar_conta.nome(class="form-control")}}
+                        </div>
+                        <div class="form-group">
+                            {{form_criar_conta.email.label(class="form-control-label")}}
+                            {{form_criar_conta.email(class="form-control")}}
+                        </div>
+                        <div class="form-group">
+                            {{form_criar_conta.data_nasc.label(class="form-control-label")}}
+                            {{form_criar_conta.data_nasc(class="form-control")}}
+                        </div>
+                        <div class="form-group">
+                            {{form_criar_conta.cpf.label(class="form-control-label") }}
+                            {{form_criar_conta.cpf(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{form_criar_conta.senha.label(class="form-control-label")}}
+                            {{form_criar_conta.senha(class="form-control")}}
+                        </div>
+
+                    </fieldset>
+                    {{form_criar_conta.submit_criar_conta(class="btn btn-primary mt-3")}}
+                </form>
+            </div>
+            <div class="col">
+                <form method="POST" action="" class="border p-4 mt-2">
+                <Legend>Login</Legend>
+                    <fieldset>
+                        <div class="form-group">
+                            {{form_login.email.label(class="form-control-label")}}
+                            {{form_login.email(class="form-control")}}
+                        </div>
+                        <div class="form-group">
+                            {{form_login.senha.label(class="form-control-label")}}
+                            {{form_login.senha(class="form-control")}}
+                        </div>
+                    </fieldset>
+                    {{form_login.submit_login(class="btn btn-primary mt-3")}}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

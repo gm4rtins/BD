@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<div class="container mt-4">
+    <h1> Busca por Carros</h1>
+    <hr>
+    <ul class="nav nav-tabs" id="myTabs">
+        <li class="nav-item">
+            <a class="nav-link active" id="tab1" data-toggle="tab" href="#content1">Marca</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab2" data-toggle="tab" href="#content2">Nacionalidade</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab3" data-toggle="tab" href="#content3">Categoria</a>
+        </li>
+    </ul>
+
+    <div class="tab-content mt-2">
+        <div class="tab-pane fade show active" id="content1">
+            <h3>Buscar por Marca</h3>
+             <form method="POST" action="/consulta-marca" class="border p-4 mt-2">
+                        <fieldset>
+                            <div class="form-group">
+                                {{ form_marca.marca.label(class='form-control-label') }}
+                                {{ form_marca.marca(class='form-control') }}
+                            </div>
+                        </fieldset>
+                        {{ form_marca.submit_marca(class='btn btn-primary mt-2')}}
+
+             </form>
+        </div>
+        <div class="tab-pane fade" id="content2">
+            <h3>Busca por País Sede</h3>
+            <form method="POST" action="/consulta-pais" class="border p-4 mt-2">
+                     <fieldset>
+                        {{ form_pais.pais.label(class='form-control-label') }}
+                        {{ form_pais.pais(class='form-control') }}
+                     </fieldset>
+                     {{form_pais.submit_pais(class='btn btn-primary mt-2')}}
+                 </form>
+        </div>
+        <div class="tab-pane fade" id="content3">
+            <h3>Categoria por Nacionalidade</h3>
+            <form method="POST" action="/quantidade-pais" class="border p-4 mt-2">
+                     <fieldset>
+                        {{ form_cat.cat.label(class='form-control-label') }}
+                        {{ form_cat.cat(class='form-control') }}
+                     </fieldset>
+                     {{form_cat.submit_cat(class='btn btn-primary mt-2')}}
+                 </form>
+        </div>
+    </div>
+</div>
+
+<!-- Adicione os scripts do Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+
+{% endblock %}
